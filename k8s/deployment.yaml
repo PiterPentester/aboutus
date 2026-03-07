@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aboutus
+  labels:
+    app: aboutus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aboutus
+  template:
+    metadata:
+      labels:
+        app: aboutus
+    spec:
+      containers:
+      - name: aboutus
+        image: ghcr.io/piterpentester/aboutus:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aboutus-service
+spec:
+  selector:
+    app: aboutus
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aboutus
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: aboutus.misseddeadlines.dpdns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: aboutus-service
+            port:
+              number: 80
