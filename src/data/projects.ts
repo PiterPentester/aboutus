@@ -7,17 +7,22 @@ export interface Project {
   status: 'Live' | 'In Development' | 'Classified';
 }
 
-export const projects: Project[] = [
+const projectsData: Omit<Project, 'id'>[] = [
   {
-    id: '1',
+    title: 'OpenWrt MCP',
+    description: 'OpenWrt MCP server',
+    link: '#',
+    github: 'https://github.com/PiterPentester/openwrt_mcp',
+    status: 'Live'
+  },
+  {
     title: 'AboutUs',
     description: 'This project',
     link: 'aboutus.misseddeadlines.dpdns.org',
     github: 'https://github.com/PiterPentester/aboutus',
-    status: 'In Development'
+    status: 'Live'
   },
   {
-    id: '2',
     title: 'Lullaby Bot',
     description: 'Telegram bot to shutdown or restart my Orange Pi',
     link: '#',
@@ -25,23 +30,20 @@ export const projects: Project[] = [
     status: 'Live'
   },
   {
-    id: '3',
     title: 'Komunalka',
     description: 'Dashboard for monitoring my rents and payments',
-    link: '#',
+    link: 'https://piterpentester.github.io/komunalka/',
     github: 'https://github.com/PiterPentester/komunalka',
     status: 'Classified'
   },
   {
-    id: '4',
     title: 'Tetra Bot',
     description: 'Telegram bot designed to continuously monitor your internet connection quality and alerts you when performance drops below acceptable levels.',
-    link: '#',
+    link: 'https://piterpentester.github.io/tetra_bot/',
     github: 'https://github.com/PiterPentester/tetra-bot',
     status: 'Live'
   },
   {
-    id: '5',
     title: 'TrustMeBro - Frontend',
     description: 'Frontend for TrustMeBro',
     link: 'https://trustmebro.misseddeadlines.dpdns.org',
@@ -49,7 +51,6 @@ export const projects: Project[] = [
     status: 'Live'
   },
   {
-    id: '6',
     title: 'TrustMeBro - Backend',
     description: 'Backend for TrustMeBro',
     link: 'https://trustmebro.misseddeadlines.dpdns.org',
@@ -57,3 +58,10 @@ export const projects: Project[] = [
     status: 'Live'
   },
 ];
+
+export const projects: Project[] = projectsData.map((p, i) => ({
+  ...p,
+  id: (i + 1).toString()
+}));
+
+
