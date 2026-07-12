@@ -33,7 +33,7 @@ const projectsData: Omit<Project, "id">[] = [
   {
     title: "Lullaby Bot",
     description: "Telegram bot to shutdown or restart my Orange Pi",
-    link: "#",
+    link: "https://piterpentester.github.io/lullaby-bot/",
     github: "https://github.com/PiterPentester/lullaby-bot",
     status: "Live",
   },
