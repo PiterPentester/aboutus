@@ -9,6 +9,13 @@ export interface Project {
 
 const projectsData: Omit<Project, "id">[] = [
   {
+    title: "NetEngAI Bot",
+    description: "Telegram Assistant bot with LLM-Powered Network Diagnostics",
+    link: "https://piterpentester.github.io/NetEngAI/",
+    github: "https://github.com/PiterPentester/NetEngAI",
+    status: "Live",
+  },
+  {
     title: "BankirBot",
     description:
       "Telegram bot acting as a Digital Banker for physical Monopoly board games.",
