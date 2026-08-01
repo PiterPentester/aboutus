@@ -9,6 +9,13 @@ export interface Project {
 
 const projectsData: Omit<Project, "id">[] = [
   {
+    title: "BunkerBot",
+    description: "A feature-packed Telegram implementation of the popular psychological party game 'Bunker'. Persuade, vote, and decide who deserves a spot in the fallout shelter to rebuild humanity.",
+    link: "https://piterpentester.github.io/BunkerBot/",
+    github: "https://github.com/PiterPentester/BunkerBot",
+    status: "Live",
+  },
+  {
     title: "NetEngAI Bot",
     description: "Telegram Assistant bot with LLM-Powered Network Diagnostics",
     link: "https://piterpentester.github.io/NetEngAI/",
