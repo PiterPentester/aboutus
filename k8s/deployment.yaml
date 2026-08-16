@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: aboutus
-        image: ghcr.io/piterpentester/aboutus:568a578
+        image: ghcr.io/piterpentester/aboutus:a1015cb
         ports:
         - containerPort: 80
         resources:
