@@ -9,6 +9,13 @@ export interface Project {
 
 const projectsData: Omit<Project, "id">[] = [
   {
+    title: "Skeleton",
+    description: "Fast, zero-dependency CLI tool written in Go that instantly bootstraps modern, production-ready Python projects",
+    link: "https://piterpentester.github.io/skeleton/",
+    github: "https://github.com/PiterPentester/skeleton",
+    status: "Live",
+  },
+  {
     title: "BunkerBot",
     description: "A feature-packed Telegram implementation of the popular psychological party game 'Bunker'. Persuade, vote, and decide who deserves a spot in the fallout shelter to rebuild humanity.",
     link: "https://piterpentester.github.io/BunkerBot/",
