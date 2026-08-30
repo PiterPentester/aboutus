@@ -9,6 +9,13 @@ export interface Project {
 
 const projectsData: Omit<Project, "id">[] = [
   {
+    title: "PolyGraph",
+    description: "A multiplayer party game bot for Telegram (inspired by the classic Spyfall / 'Знахідка для шпигуна' mechanics).",
+    link: "https://piterpentester.github.io/polygraph/",
+    github: "https://github.com/PiterPentester/polygraph",
+    status: "Live",
+  },
+  {
     title: "Skeleton",
     description: "Fast, zero-dependency CLI tool written in Go that instantly bootstraps modern, production-ready Python projects",
     link: "https://piterpentester.github.io/skeleton/",
